@@ -24,11 +24,11 @@ Cyclistic Executive Team: Will decide whether to appove the reccomended marketin
 # Prepare
 ## Data Source
 
-Reliable
-Original
-Comprehensive 
-Current 
-Cited
+- [x] Reliable - deemed reliable as there are over 5 millions rows of trip data
+- [x] Original
+- [x]  
+- [x] 
+- [x]
 
 The data comes from
 
