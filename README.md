@@ -8,12 +8,21 @@ Therefore the wants wants to understand how casual riders and annual memebers us
 From these insights, your team will design a new maketing strategy to convert casual riders into annual members.
 But first, Cyclistic excutives must approve your recommendations, so they must be backed up with compelling data insights and professional data visualizations.
 
-
-# Main Business Task
-
-# Stakeholders
+# Ask
+## Main Business Task
+## Stakeholders
 
 # Prepare
-# Process
+## Data Source
 
-Data Cleaning
+# Process
+## Data Cleaning SQL
+
+# Analyze
+## Data Analysis SQL / Tableuau
+
+# Share
+## Data Visualization Tabeau
+
+# Act
+## Reccomendations
