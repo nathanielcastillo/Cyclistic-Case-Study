@@ -9,11 +9,18 @@ From these insights, your team will design a new maketing strategy to convert ca
 But first, Cyclistic excutives must approve your recommendations, so they must be backed up with compelling data insights and professional data visualizations.
 
 # Ask
-## Main Business Task
-## Stakeholders
+### Main Business Task
+
+The Main business task is to
+
+### Stakeholders
+
+The stakeholders are
 
 # Prepare
 ## Data Source
+
+The data comes from
 
 # Process
 ## Data Cleaning SQL
