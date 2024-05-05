@@ -11,14 +11,24 @@ But first, Cyclistic excutives must approve your recommendations, so they must b
 # Ask
 ### Main Business Task
 
-The Main business task is to
+Analyze how members and casual riders use Cyclistic bikes differently. 
+
+Provide reccomendations to convert casual riders into annual members based on the findings.
 
 ### Stakeholders
 
-The stakeholders are
+Lily Moreno: Director of marketing 
+
+Cyclistic Executive Team: Will decide whether to appove the reccomended marketing program
 
 # Prepare
 ## Data Source
+
+Reliable
+Original
+Comprehensive 
+Current 
+Cited
 
 The data comes from
 
