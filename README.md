@@ -63,12 +63,12 @@ The 12 CSVs of data will be used
 Total - 5719877 rows of data
 
 # Process
-### Data Cleaning SQL
+### Data Cleaning Tools
 
-Data cleaning will be done in MySQL as there are a total of over 5 million rows of data that need to be cleaned  
-which is too much for Microsoft Excel to process efficiently
+Data cleaning will be done in MySQL as there are a total of over 5 million rows of data which is too much for Microsoft Excel to process efficiently
 
-### Creating Master Table to hold data
+### Creating Master Table
+This will hold all the data from the 12 CSVs as 2023_ride_data
 
 ``` MySQL
 DROP TABLE IF EXISTS 2023_ride_data;
@@ -91,9 +91,9 @@ CREATE TABLE 2023_ride_data
 ;
 ```
 
-### Load data into 2023_ride_data
-LOAD DATA INFILE is used for performance
-
+### Loading data into Master Table
+LOAD DATA INFILE is used to achieve best performance   
+File path is dependent on where file is stored
 ``` MySQL
 LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202301-divvy-tripdata.csv'
 INTO TABLE 2023_ride_data
@@ -170,7 +170,7 @@ IGNORE 1 ROWS; -- Skip the header row if present
 ```
 
 ### Deleting rows with NULL or blank values
-
+Several station names are blank and cannot be identified even when using coordinate information
 ``` MySQL
 DELETE 
 FROM 2023_ride_data
@@ -204,6 +204,7 @@ member_casual = '' OR member_casual IS NULL
 ```
 
 ### Cleaning Station names
+Station Name variations lead to unnecessary station duplicates
 ``` MySQL
 UPDATE 2023_ride_data
 SET 
@@ -222,7 +223,9 @@ SET
     end_station_name = REPLACE(end_station_name, 'Senka "Edward Duke"" Park"', 'Senka "Edward Duke" Park')
 ;
 ```
+
 ### Deleting rides with "Test" in Station names
+"Test" rides will be omitted 
 ``` MySQL
 DELETE 
 FROM 2023_ride_data
@@ -230,15 +233,14 @@ WHERE start_station_name LIKE "%Test%" OR end_station_name LIKE "%Test%"
 ;
 ```
 
-
-### Setting Ride ID to 16 characters
+### Setting ride_ID column to 16 characters
 
 ``` MySQL
 UPDATE 2023_ride_data
 SET ride_id = LEFT(ride_id, 16);
 ```
 
-### Trim all columns
+### Trimming all columns
 
 ``` MySQL
 UPDATE 2023_ride_data
@@ -259,7 +261,8 @@ member_casual = TRIM(member_casual)
 ;
 ```
 
-### Drop start ids and end ids
+### Dropping start_station_id and end_station_id columns
+Station ID columns are not necessary 
 
 ``` MySQL
 ALTER TABLE 2023_ride_data
@@ -268,7 +271,10 @@ DROP COLUMN end_station_id
 ;
 ```
 
-### Create Temporary Table with Window function to add row number to duplicates. Prioritizing member rides
+### Create Temporary Table with Window function to add row number to duplicates
+If duplicate entries exist, window function will assign row numbers to entries  
+Member rides will be prioritized over casual rides with row number 1  
+Result will be created in temporary table for later use
 
 ```MySQL
 DROP TABLE IF EXISTS member_row;
