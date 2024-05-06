@@ -222,6 +222,51 @@ SET
     end_station_name = REPLACE(end_station_name, 'Senka "Edward Duke"" Park"', 'Senka "Edward Duke" Park')
 ;
 ```
+### Deleting rides with "Test" in Station names
+``` MySQL
+DELETE 
+FROM 2023_ride_data
+WHERE start_station_name LIKE "%Test%" OR end_station_name LIKE "%Test%"
+;
+```
+
+
+### Setting Ride ID to 16 characters
+
+``` MySQL
+UPDATE 2023_ride_data
+SET ride_id = LEFT(ride_id, 16);
+```
+
+### Trim all columns
+
+``` MySQL
+UPDATE 2023_ride_data
+SET
+ride_id = TRIM(ride_id),
+rideable_type = TRIM(rideable_type),
+started_at = TRIM(started_at),
+ended_at = TRIM(ended_at),
+start_station_name = TRIM(start_station_name),
+start_station_id = TRIM(start_station_id),
+end_station_name = TRIM(end_station_name),
+end_station_id = TRIM(end_station_id),
+start_lat = TRIM(start_lat),
+start_lng = TRIM(start_lng),
+end_lat = TRIM(end_lat),
+end_lng = TRIM(end_lng),
+member_casual = TRIM(member_casual)
+;
+```
+
+### Drop start ids and end ids
+
+``` MySQL
+ALTER TABLE 2023_ride_data
+DROP COLUMN start_station_id,
+DROP COLUMN end_station_id
+;
+```
 
 # Analyze
 ## Data Analysis SQL / Tableuau
