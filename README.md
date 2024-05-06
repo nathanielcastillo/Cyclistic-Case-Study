@@ -58,8 +58,9 @@ The 12 CSVs of data will be used
 202309-divvy-tripdata.csv - 666371 rows of data  
 202310-divvy-tripdata.csv - 537113 rows of data  
 202311-divvy-tripdata.csv - 362518 rows of data  
-202312-divvy-tripdata.csv - 224073 rows of data  
+202312-divvy-tripdata.csv - 224073 rows of data
 
+Total - 5719877 rows of data
 
 # Process
 ### Data Cleaning SQL
@@ -94,7 +95,6 @@ CREATE TABLE 2023_ride_data
 LOAD DATA INFILE is used for performance
 
 ``` MySQL
-
 LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202301-divvy-tripdata.csv'
 INTO TABLE 2023_ride_data
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
@@ -166,6 +166,60 @@ INTO TABLE 2023_ride_data
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS; -- Skip the header row if present
+;
+```
+
+### Deleting rows with NULL or blank values
+
+``` MySQL
+DELETE 
+FROM 2023_ride_data
+WHERE 
+ride_id = '' OR ride_id IS NULL
+OR
+rideable_type = '' OR rideable_type IS NULL
+OR
+started_at = '' OR started_at IS NULL
+OR
+ended_at = '' OR ended_at IS NULL
+OR
+start_station_name = '' OR start_station_name IS NULL
+OR
+start_station_id = '' OR start_station_id IS NULL
+OR
+end_station_name = '' OR end_station_name IS NULL
+OR
+end_station_id = '' OR end_station_id IS NULL
+OR
+start_lat = '' OR start_lat IS NULL
+OR
+start_lng = '' OR start_lng IS NULL
+OR
+end_lat = '' OR end_lat  IS NULL
+OR
+end_lng = '' OR end_lng IS NULL
+OR
+member_casual = '' OR member_casual IS NULL
+;
+```
+
+### Cleaning Station names
+``` MySQL
+UPDATE 2023_ride_data
+SET 
+    start_station_name = REPLACE(start_station_name, 'Public Rack - ', ''),
+    start_station_name = REPLACE(start_station_name, ' (Temp)', ''),
+    start_station_name = REPLACE(start_station_name, '*', ''),
+    start_station_name = REPLACE(start_station_name, '/', ' & '),
+	start_station_name = REPLACE(start_station_name, 'Buckingham - Fountain', 'Buckingham Fountain'),
+    start_station_name = REPLACE(start_station_name, 'Senka "Edward Duke"" Park"', 'Senka "Edward Duke" Park'),
+    
+    end_station_name = REPLACE(end_station_name, 'Public Rack - ', ''),
+    end_station_name = REPLACE(end_station_name, ' (Temp)', ''),
+    end_station_name = REPLACE(end_station_name, '*', ''),
+    end_station_name = REPLACE(end_station_name, '/', ' & '),
+	end_station_name = REPLACE(end_station_name, 'Buckingham - Fountain', 'Buckingham Fountain'),
+    end_station_name = REPLACE(end_station_name, 'Senka "Edward Duke"" Park"', 'Senka "Edward Duke" Park')
 ;
 ```
 
