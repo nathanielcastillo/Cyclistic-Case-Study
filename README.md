@@ -233,8 +233,8 @@ WHERE start_station_name LIKE "%Test%" OR end_station_name LIKE "%Test%"
 ;
 ```
 
-### Setting ride_ID column to 16 characters
-
+### Setting ride_id column to 16 characters
+Standardizng Ride IDs
 ``` MySQL
 UPDATE 2023_ride_data
 SET ride_id = LEFT(ride_id, 16);
@@ -262,7 +262,7 @@ member_casual = TRIM(member_casual)
 ```
 
 ### Dropping start_station_id and end_station_id columns
-Station ID columns are not necessary 
+Station ID columns are not useful or necessary
 
 ``` MySQL
 ALTER TABLE 2023_ride_data
@@ -288,6 +288,7 @@ ORDER BY ride_id
 ```
 
 ## Deleting duplicates prioritzing member rides
+If duplicate entries exists, they are deleted using by filtering out row numbers > 1 from the previous temporary table
 
 ```MySQL
 TRUNCATE TABLE 2023_ride_data; 
@@ -300,7 +301,7 @@ ORDER BY ride_id
 ```
 
 ## Deleting rides with trip durations over 1 day or negative ride duration
-
+These trip durations seem to be anomalies or technical errors so they are omitted
 ```MySQL
 DELETE
 FROM 2023_ride_data
@@ -312,7 +313,7 @@ OR TIMESTAMPDIFF (MINUTE, started_at, ended_at) < 0
 ```
 
 ## Deleting rides with same start and end station and ride_durations under 1 minute 
-
+If these conditions are met then it is mostly likely a test or accident so they are omitted
 ```MySQL
 DELETE
 FROM 2023_ride_data
@@ -322,15 +323,15 @@ ORDER BY ride_id
 ```
 ## Analysis
 
-## Add column route
-
+## Adding column route
+To analyze popular start station + end station combination
 ```MySQL
 ALTER TABLE 2023_ride_data
 ADD COLUMN ride_route VARCHAR(255) AS (CONCAT(start_station_name, ' - ', end_station_name))
 ;
 ```
 ## Add column trip duration
-
+To analyze trip duration in minutes
 ```MySQL
 ALTER TABLE 2023_ride_data
 ADD COLUMN ride_duration_min INT AS (TIMESTAMPDIFF(MINUTE, started_at, ended_at))
