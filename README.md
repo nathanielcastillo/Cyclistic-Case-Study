@@ -268,6 +268,71 @@ DROP COLUMN end_station_id
 ;
 ```
 
+### Create Temporary Table with Window function to add row number to duplicates. Prioritizing member rides
+
+```MySQL
+DROP TABLE IF EXISTS member_row;
+CREATE TEMPORARY TABLE member_row
+SELECT 
+            ride_id, rideable_type, started_at, ended_at, start_station_name, end_station_name, start_lat, start_lng, end_lat, end_lng, member_casual,
+            ROW_NUMBER() OVER (PARTITION BY ride_id, rideable_type, started_at, ended_at, start_station_name, end_station_name ORDER BY member_casual DESC) AS row_num
+FROM 2023_ride_data
+ORDER BY ride_id
+;
+```
+
+## Deleting duplicates prioritzing member rides
+
+```MySQL
+TRUNCATE TABLE 2023_ride_data; 
+-- ALTER TABLE 2023_ride_data
+-- ADD row_num VARCHAR(50);
+INSERT INTO 2023_ride_data  
+SELECT ride_id, rideable_type, started_at, ended_at, start_station_name, end_station_name, start_lat, start_lng, end_lat, end_lng, member_casual
+FROM member_row
+WHERE row_num = 1
+ORDER BY ride_id
+;
+```
+
+## Deleting rides with trip durations over 1 day or under negative ride duration
+
+```MySQL
+DELETE
+FROM 2023_ride_data
+WHERE TIMESTAMPDIFF (YEAR, started_at, ended_at) > 0
+OR TIMESTAMPDIFF (MONTH, started_at, ended_at) > 0
+OR TIMESTAMPDIFF (DAY, started_at, ended_at) > 0
+OR TIMESTAMPDIFF (MINUTE, started_at, ended_at) < 0
+;
+```
+
+## Deleting rides with same start and end station and ride_durations under 1 minute 
+
+```MySQL
+DELETE
+FROM 2023_ride_data
+WHERE start_station_name = end_station_name AND TIMESTAMPDIFF (MINUTE, started_at, ended_at) < 1
+ORDER BY ride_id
+;
+```
+## Analysis
+
+## Add column route
+
+```MySQL
+ALTER TABLE 2023_ride_data
+ADD COLUMN ride_route VARCHAR(255) AS (CONCAT(start_station_name, ' - ', end_station_name))
+;
+## Add column trip duration
+```
+
+```MySQL
+ALTER TABLE 2023_ride_data
+ADD COLUMN ride_duration_min INT AS (TIMESTAMPDIFF(MINUTE, started_at, ended_at))
+;
+```
+
 # Analyze
 ## Data Analysis SQL / Tableuau
 
