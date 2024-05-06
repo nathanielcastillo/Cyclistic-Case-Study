@@ -212,14 +212,14 @@ SET
     start_station_name = REPLACE(start_station_name, ' (Temp)', ''),
     start_station_name = REPLACE(start_station_name, '*', ''),
     start_station_name = REPLACE(start_station_name, '/', ' & '),
-	start_station_name = REPLACE(start_station_name, 'Buckingham - Fountain', 'Buckingham Fountain'),
+    start_station_name = REPLACE(start_station_name, 'Buckingham - Fountain', 'Buckingham Fountain'),
     start_station_name = REPLACE(start_station_name, 'Senka "Edward Duke"" Park"', 'Senka "Edward Duke" Park'),
     
     end_station_name = REPLACE(end_station_name, 'Public Rack - ', ''),
     end_station_name = REPLACE(end_station_name, ' (Temp)', ''),
     end_station_name = REPLACE(end_station_name, '*', ''),
     end_station_name = REPLACE(end_station_name, '/', ' & '),
-	end_station_name = REPLACE(end_station_name, 'Buckingham - Fountain', 'Buckingham Fountain'),
+    end_station_name = REPLACE(end_station_name, 'Buckingham - Fountain', 'Buckingham Fountain'),
     end_station_name = REPLACE(end_station_name, 'Senka "Edward Duke"" Park"', 'Senka "Edward Duke" Park')
 ;
 ```
@@ -271,10 +271,10 @@ DROP COLUMN end_station_id
 ;
 ```
 
-### Create Temporary Table with Window function to add row number to duplicates
+### Creating Temporary Table with Window function to add row number to duplicates
 If duplicate entries exist, window function will assign row numbers to entries  
 Member rides will be prioritized over casual rides with row number 1  
-Result will be created in temporary table for later use
+Result will be stored in temporary table for later use
 
 ```MySQL
 DROP TABLE IF EXISTS member_row;
@@ -291,8 +291,6 @@ ORDER BY ride_id
 
 ```MySQL
 TRUNCATE TABLE 2023_ride_data; 
--- ALTER TABLE 2023_ride_data
--- ADD row_num VARCHAR(50);
 INSERT INTO 2023_ride_data  
 SELECT ride_id, rideable_type, started_at, ended_at, start_station_name, end_station_name, start_lat, start_lng, end_lat, end_lng, member_casual
 FROM member_row
@@ -301,7 +299,7 @@ ORDER BY ride_id
 ;
 ```
 
-## Deleting rides with trip durations over 1 day or under negative ride duration
+## Deleting rides with trip durations over 1 day or negative ride duration
 
 ```MySQL
 DELETE
@@ -330,8 +328,8 @@ ORDER BY ride_id
 ALTER TABLE 2023_ride_data
 ADD COLUMN ride_route VARCHAR(255) AS (CONCAT(start_station_name, ' - ', end_station_name))
 ;
-## Add column trip duration
 ```
+## Add column trip duration
 
 ```MySQL
 ALTER TABLE 2023_ride_data
