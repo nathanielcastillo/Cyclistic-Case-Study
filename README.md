@@ -232,7 +232,7 @@ SET
 * Did not delete rows so table total remains same
 
 ### Deleting rides with "Test" in Station names
-"Test" rides will be omitted 
+"Test" rides will be deleted   
 ``` MySQL
 DELETE 
 FROM 2023_ride_data
@@ -286,7 +286,7 @@ DROP COLUMN end_station_id
 
 ### Creating Temporary Table with Window function to add row number to duplicates
 Window function will assign row numbers to entries to determine if duplicate entries exist  
-The first member ride entry will marked with row number 1  
+The first ride entry prioritizing member rides will marked with row number 1  
 Any duplicate entry will be marked with a row number > 1  
 Result is stored in temporary table for later use  
 
@@ -302,7 +302,7 @@ ORDER BY ride_id
 ```
 * member_row - temporary table created with 4331692 rows
 
-## "Deleting" duplicates prioritzing member rides
+### "Deleting" duplicates prioritzing member rides
 We are only importing where row num = 1   
 If duplicate entries exists, they are "deleted" by filtering out row numbers != 1 from the previous temporary table  
 
@@ -317,8 +317,8 @@ ORDER BY ride_id
 ```
 * New 2023_ride_data total - 4331692 (No duplicates)
 
-## Deleting rides with trip durations over 1 day or negative ride duration  
-These trip durations seem to be anomalies or technical errors so they are omitted
+### Deleting rides with trip durations over 1 day or negative ride duration  
+Likely technical errors or extreme outliers so they are deleted
 ```MySQL
 DELETE
 FROM 2023_ride_data
@@ -331,8 +331,8 @@ OR TIMESTAMPDIFF (MINUTE, started_at, ended_at) < 0
 * 167 rows deleted
 * New 2023_ride_data total - 4331525 rows
   
-## Deleting rides with same start and end station and ride_durations under 1 minute 
-If these conditions are met then it is mostly likely a test or accident so they are omitted
+### Deleting rides with same start and end station and ride_durations under 1 minute 
+If these conditions are met then it is mostly likely a test or accident so they are deleted
 ```MySQL
 DELETE
 FROM 2023_ride_data
@@ -343,16 +343,16 @@ ORDER BY ride_id
 * 84179 rows deleted
 * New 2023_ride_data total - 4247346 rows
 
-## Analysis
+## Additions
 
-## Adding column route
+### Adding column route
 To analyze popular start station + end station combination
 ```MySQL
 ALTER TABLE 2023_ride_data
 ADD COLUMN ride_route VARCHAR(255) AS (CONCAT(start_station_name, ' - ', end_station_name))
 ;
 ```
-## Add column trip duration
+### Adding column trip duration
 To analyze trip duration in minutes
 ```MySQL
 ALTER TABLE 2023_ride_data
