@@ -360,13 +360,8 @@ ALTER TABLE 2023_ride_data
 ADD COLUMN ride_duration_min INT AS (TIMESTAMPDIFF(MINUTE, started_at, ended_at))
 ;
 ```
-# Analyze
+# Analyze & Share
 
-
-## Data Analysis SQL / Tableuau
-
-# Share
-## Data Visualization Tabeau
 
 # Act
 ## Reccomendations
