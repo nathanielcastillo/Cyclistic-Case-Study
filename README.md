@@ -94,6 +94,7 @@ CREATE TABLE 2023_ride_data
 ### Loading data into Master Table
 LOAD DATA INFILE is used to achieve best performance   
 File path is dependent on where file is stored
+
 ``` MySQL
 LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202301-divvy-tripdata.csv'
 INTO TABLE 2023_ride_data
@@ -168,9 +169,11 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS; -- Skip the header row if present
 ;
 ```
+* 2023_ride_data - 5719877 rows imported
 
 ### Deleting rows with NULL or blank values
 Several station names are blank and cannot be identified even when using coordinate information
+
 ``` MySQL
 DELETE 
 FROM 2023_ride_data
@@ -202,6 +205,8 @@ OR
 member_casual = '' OR member_casual IS NULL
 ;
 ```
+* 1388170 rows deleted   
+* New 2023_ride_data total - 4331707 rows 
 
 ### Cleaning Station names
 Station Name variations lead to unnecessary station duplicates
@@ -223,6 +228,8 @@ SET
     end_station_name = REPLACE(end_station_name, 'Senka "Edward Duke"" Park"', 'Senka "Edward Duke" Park')
 ;
 ```
+* 151158 rows affected  
+* Did not delete rows so table total remains same
 
 ### Deleting rides with "Test" in Station names
 "Test" rides will be omitted 
@@ -232,6 +239,8 @@ FROM 2023_ride_data
 WHERE start_station_name LIKE "%Test%" OR end_station_name LIKE "%Test%"
 ;
 ```
+* 15 rows deleted  
+* New 2023_ride_data total - 4331692 rows
 
 ### Setting ride_id column to 16 characters
 Standardizng Ride IDs
@@ -239,7 +248,9 @@ Standardizng Ride IDs
 UPDATE 2023_ride_data
 SET ride_id = LEFT(ride_id, 16);
 ```
-
+* 484 rows affected
+* Did not delete rows so table total remains same
+ 
 ### Trimming all columns
 
 ``` MySQL
@@ -260,6 +271,8 @@ end_lng = TRIM(end_lng),
 member_casual = TRIM(member_casual)
 ;
 ```
+* 257 rows affected
+* Did not delete rows so table total remains same
 
 ### Dropping start_station_id and end_station_id columns
 Station ID columns are not useful or necessary
@@ -272,9 +285,10 @@ DROP COLUMN end_station_id
 ```
 
 ### Creating Temporary Table with Window function to add row number to duplicates
-If duplicate entries exist, window function will assign row numbers to entries  
-Member rides will be prioritized over casual rides with row number 1  
-Result will be stored in temporary table for later use
+Window function will assign row numbers to entries to determine if duplicate entries exist  
+The first member ride entry will marked with row number 1  
+Any duplicate entry will be marked with a row number > 1  
+Result is stored in temporary table for later use  
 
 ```MySQL
 DROP TABLE IF EXISTS member_row;
@@ -286,9 +300,11 @@ FROM 2023_ride_data
 ORDER BY ride_id
 ;
 ```
+* member_row - temporary table created with 4331692 rows
 
-## Deleting duplicates prioritzing member rides
-If duplicate entries exists, they are deleted using by filtering out row numbers > 1 from the previous temporary table
+## "Deleting" duplicates prioritzing member rides
+We are only importing where row num = 1   
+If duplicate entries exists, they are "deleted" by filtering out row numbers != 1 from the previous temporary table  
 
 ```MySQL
 TRUNCATE TABLE 2023_ride_data; 
@@ -299,8 +315,9 @@ WHERE row_num = 1
 ORDER BY ride_id
 ;
 ```
+* New 2023_ride_data total 4331692 (No duplicates)
 
-## Deleting rides with trip durations over 1 day or negative ride duration
+## Deleting rides with trip durations over 1 day or negative ride duration  
 These trip durations seem to be anomalies or technical errors so they are omitted
 ```MySQL
 DELETE
