@@ -315,7 +315,7 @@ WHERE row_num = 1
 ORDER BY ride_id
 ;
 ```
-* New 2023_ride_data total 4331692 (No duplicates)
+* New 2023_ride_data total - 4331692 (No duplicates)
 
 ## Deleting rides with trip durations over 1 day or negative ride duration  
 These trip durations seem to be anomalies or technical errors so they are omitted
@@ -328,7 +328,9 @@ OR TIMESTAMPDIFF (DAY, started_at, ended_at) > 0
 OR TIMESTAMPDIFF (MINUTE, started_at, ended_at) < 0
 ;
 ```
-
+* 167 rows deleted
+* New 2023_ride_data total - 4331525 rows
+  
 ## Deleting rides with same start and end station and ride_durations under 1 minute 
 If these conditions are met then it is mostly likely a test or accident so they are omitted
 ```MySQL
@@ -338,6 +340,9 @@ WHERE start_station_name = end_station_name AND TIMESTAMPDIFF (MINUTE, started_a
 ORDER BY ride_id
 ;
 ```
+* 84179 rows deleted
+* New 2023_ride_data total - 4247346 rows
+
 ## Analysis
 
 ## Adding column route
