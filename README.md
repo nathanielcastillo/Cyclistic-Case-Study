@@ -343,7 +343,8 @@ ORDER BY ride_id
 * 84179 rows deleted
 * New 2023_ride_data total - 4247346 rows
 
-## Additions
+## Additions 
+Now that the data have been cleaned, two columns are added for analysis
 
 ### Adding column route
 To analyze popular start station + end station combination
@@ -359,8 +360,9 @@ ALTER TABLE 2023_ride_data
 ADD COLUMN ride_duration_min INT AS (TIMESTAMPDIFF(MINUTE, started_at, ended_at))
 ;
 ```
-
 # Analyze
+
+
 ## Data Analysis SQL / Tableuau
 
 # Share
