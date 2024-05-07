@@ -26,8 +26,7 @@ But first, Cyclistic excutives must approve your recommendations, so they must b
 # Prepare
 ### Data Source
 
-Data is downloaded from [
-](https://divvy-tripdata.s3.amazonaws.com/index.html)
+Data is downloaded from https://divvy-tripdata.s3.amazonaws.com/index.html
 
 Trip data is organized into 1 CSV file per month for a total of 12 CSVs for the year 2023
 
