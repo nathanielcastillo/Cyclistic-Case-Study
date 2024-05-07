@@ -65,7 +65,8 @@ Total - 5719877 rows of data
 # Process
 ### Data Cleaning Tools
 
-Data cleaning will be done in MySQL as there are a total of over 5 million rows of data which is too much for Microsoft Excel to process efficiently
+Data cleaning will be done in MySQL as there are a total of over 5 million rows of data which is too much for Microsoft Excel to process efficiently  
+The code used will be documented below  
 
 ### Creating Master Table
 This will hold all the data from the 12 CSVs as 2023_ride_data
