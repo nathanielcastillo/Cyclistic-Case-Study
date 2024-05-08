@@ -376,6 +376,11 @@ The Data has been analyzed and visualized in Tableau
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/test.png)
 
+![
+](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Member%20Pie%20Chart.png)
+
+![
+](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Bicycle%20Ride%20type.png)
 
 # Act
 ## Reccomendations
