@@ -370,10 +370,6 @@ The Data has been analyzed and visualized in Tableau
 [2023 Cyclistic Ride Data Dashboard
 ](https://public.tableau.com/views/2023CyclisticRideDataDashboard/RideDataDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 
-
-![
-](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Ride%20Data%20Story.png)
-
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Total%20Ride%20Count%20per%20Month.png)
 
