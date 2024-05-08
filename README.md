@@ -363,8 +363,8 @@ ADD COLUMN ride_duration_min INT AS (TIMESTAMPDIFF(MINUTE, started_at, ended_at)
 # Analyze & Share
 
 
-
-
+![
+](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Ride%20Data%20Story.png)
 
 
 
