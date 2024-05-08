@@ -373,6 +373,10 @@ The Data has been analyzed and visualized in Tableau
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Total%20Ride%20Count%20per%20Month.png)
 
+![
+](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/test.png)
+
+
 # Act
 ## Reccomendations
 
