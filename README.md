@@ -376,9 +376,12 @@ The Data has been analyzed and visualized in Tableau
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Member%20Percent.png)
 
 In 2023 approximately 2/3 of the rides were member rides
-* Out of 4247346 rides analyzed  
-* Casual rides make up 35.44% at 1505329 rides    
-* Members rides make up 64.56% at 2742017 rides
+
+| Rider Type | Percentage | Count   |  
+|------------|------------|---------|   
+| Total      | 100%       | 4247346 |  
+| Casual     | 35.44%     | 1505329 |  
+| Member     | 64.56%     | 2742017 |
 
 ## Bicycle Type
 ![
@@ -391,8 +394,11 @@ Both members and casual riders ride classic bikes more than electric. Docked biy
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Avg%20Ride%20Duration%20Minutes.png)
 
 Members on average have shorter rides than casuals
-* Casual average ride duration 22.71 minutes  
-* Members average ride duration 11.87 minutes
+
+| Rider Type | Average Ride Duration |
+|------------|-----------------------|
+| Casual     | 22.71                 |
+| Member     | 11.87                 |
 
 ## Total Ride Count Per
 ### Hour
@@ -401,6 +407,11 @@ Members on average have shorter rides than casuals
 
 Members prefer to ride at 8:00 AM and 5:00 PM, most likely commuting to and from work    
 Casuals also ride at 5:00 PM but do not have the same peak at 8:00 AM  
+
+| Syntax      | Description | Test Text     |
+| :---        |    :----:   |          ---: |
+| Header      | Title       | Here's this   |
+| Paragraph   | Text        | And more      |
 
 ### Weekday
 ![
