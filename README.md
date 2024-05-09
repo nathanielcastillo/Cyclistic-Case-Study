@@ -433,25 +433,28 @@ Both Casuals and member ride peak in the warmer summer months and fall off durin
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Start%20Station%20Map.png)
 
-Members start their rides across more various stations while  
-casual rides are more concentrated to fewer stations
+| Casual                           | Member                         |
+|----------------------------------|--------------------------------|
+| More concentrated start stations | More spread out start stations |
 
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/End%20Station%20Map.png)
 
-Members end their rides across more various stations  
-while casual rides are more concentrated to fewer stations.
+| Casual                         | Member                       |
+|--------------------------------|------------------------------|
+| More concentrated end stations | More spread out end stations |
 
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Top%2010%20Routes.png)
 
-The most popular casual rides start and end at the same stations.  
-The most popular member rides have different start and end stations.
+| Casual                                                 | Member                                                  |
+|--------------------------------------------------------|---------------------------------------------------------|
+| Most popular rides have the same start and end station | Most popular rides have different start and end station |
 
 # Act
 ## Reccomendations
 
-Top 3 Reccomendations to convert Casual Riders to Annual Members
+### Top 3 Reccomendations to convert Casual Riders to Annual Members
 
 1. During the Summer Months, offer a discount on the annual membership
 Since summer are busiest months, casual riders may opt to purchase an annual membership if they plan on riding a lot during the summer
