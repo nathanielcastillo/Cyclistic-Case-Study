@@ -405,27 +405,30 @@ Members on average have shorter rides than casuals
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Total%20Ride%20Count%20Per%20Hour.png)
 
-Members prefer to ride at 8:00 AM and 5:00 PM, most likely commuting to and from work    
-Casuals also ride at 5:00 PM but do not have the same peak at 8:00 AM  
+Members are most likely commuting to and from work
 
-| Syntax      | Description | Test Text     |
-| :---        |    :----:   |          ---: |
-| Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
+| Rider Type | Peak Riding Hours | Count  |
+|------------|-------------------|--------|
+| Casual     | 5:00 PM           | 147950 |
+| Member     | 8:00 AM           | 191013 |
+| Member     | 5:00 PM           | 297284 |
 
 ### Weekday
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Total%20Ride%20Count%20per%20Weekday.png)
 
 Casual and member riders have inverse ride preferences  
-Members prefer the middle of the week while casuals prefer weekends    
 Members most likely ride for midweek work commutes and casuals most likely ride for weekend leisure
+
+| Casual                 | Member                    |
+|------------------------|---------------------------|
+| Rides most on weekends | Rides most during midweek |
 
 ### Month
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Total%20Ride%20Count%20per%20Month.png)
 
-Casuals and member ride peak in the summer months and fall off during the winter months.
+Both Casuals and member ride peak in the warmer summer months and fall off during the colder winter months
 
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Start%20Station%20Map.png)
