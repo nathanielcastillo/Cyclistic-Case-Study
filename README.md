@@ -376,26 +376,33 @@ The Data has been analyzed and visualized in Tableau
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Member%20Percent.png)
 
-Almost 2/3 of the rides made in 2023 were Member rides
+Approximately 2/3 of the rides made in 2023 were Member rides
 
-Out of 4247346 rides analyzed
-Casual rides make up 35.44% at 1505329 rides  
-Members rides make up 64.56% at 2742017
+* Out of 4247346 rides analyzed  
+* Casual rides make up 35.44% at 1505329 rides    
+* Members rides make up 64.56% at 2742017
 
-
+## Bicycle Type
 
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Bicycle%20Type.png)
 
+Both members and casual riders ride
+
+
+## Average Ride Duration
+
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Avg%20Ride%20Duration%20Minutes.png)
 
+## Total Ride Count Per
+### Hour
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Total%20Ride%20Count%20Per%20Hour.png)
-
+### Weekday
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Total%20Ride%20Count%20per%20Weekday.png)
-
+### Month
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Total%20Ride%20Count%20per%20Month.png)
 
