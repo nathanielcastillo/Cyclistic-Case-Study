@@ -372,50 +372,80 @@ The Data has been analyzed and visualized in Tableau
 
 
 ## Membership Percentage
-
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Member%20Percent.png)
 
 In 2023 approximately 2/3 of the rides were member rides
-
 * Out of 4247346 rides analyzed  
 * Casual rides make up 35.44% at 1505329 rides    
 * Members rides make up 64.56% at 2742017 rides
 
 ## Bicycle Type
-
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Bicycle%20Type.png)
 
 Both members and casual riders ride classic bikes more than electric. Docked biycles only appeared in casual rides
 
 ## Average Ride Duration
-
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Avg%20Ride%20Duration%20Minutes.png)
+
+Members on average have shorter rides than casuals
+* Casual average ride duration 22.71 minutes  
+* Members average ride duration 11.87 minutes
 
 ## Total Ride Count Per
 ### Hour
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Total%20Ride%20Count%20Per%20Hour.png)
+
+Members prefer to ride at 8:00 AM and 5:00 PM, most likely commuting to and from work    
+Casuals also ride at 5:00 PM but do not have the same peak at 8:00 AM  
+
 ### Weekday
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Total%20Ride%20Count%20per%20Weekday.png)
+
+Casual and member riders have inverse ride preferences  
+Members prefer the middle of the week while casuals prefer weekends    
+Members most likely ride for midweek work commutes and casuals most likely ride for weekend leisure
+
 ### Month
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Total%20Ride%20Count%20per%20Month.png)
 
+Casuals and member ride peak in the summer months and fall off during the winter months.
 
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Start%20Station%20Map.png)
 
+Members start their rides across more various stations while  
+casual rides are more concentrated to fewer stations
+
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/End%20Station%20Map.png)
+
+Members end their rides across more various stations  
+while casual rides are more concentrated to fewer stations.
 
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Top%2010%20Routes.png)
 
+The most popular casual rides start and end at the same stations.  
+The most popular member rides have different start and end stations.
+
 # Act
 ## Reccomendations
+
+Top 3 Reccomendations to convert Casual Riders to Annual Members
+
+1. During the Summer Months, offer a discount on the annual membership
+Since summer are busiest months, casual riders may opt to purchase an annual membership if they plan on riding a lot during the summer
+
+2. Display advertising in & around popular casual stations
+Popular casual stations such as Streeter Dr/Grand Ave and DuSable Lake Shore Dr/Monroe St offer high visibility to casual riders
+
+3. Increase casual price during the weekends to incentivize membership purchases
+Since weekends are the most popular casual days, casual riders may opt for an annual membership if the daily prices are going to be higher on the weekends
 
 
