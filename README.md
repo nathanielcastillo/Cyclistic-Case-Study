@@ -21,7 +21,7 @@ But first, Cyclistic excutives must approve your recommendations, so they must b
 
 * Cyclistic Executive Team: Will decide whether to appove the reccomended marketing program
 
-* Cyclistc Marketing Analytics Team: Team of data analysts reposonsible for guiding Cyclistic marketing strategey
+* Cyclistc Marketing Analytics Team: Team of data analysts reposonsible for guiding Cyclistic marketing strategy
 
 # Prepare
 ### Data Source
