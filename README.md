@@ -370,8 +370,19 @@ The Data has been analyzed and visualized in Tableau
 [2023 Cyclistic Ride Data Dashboard
 ](https://public.tableau.com/views/2023CyclisticRideDataDashboard/RideDataDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 
+
+## Membership Percentage
+
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Member%20Percent.png)
+
+Almost 2/3 of the rides made in 2023 were Member rides
+
+Out of 4247346 rides analyzed
+Casual rides make up 35.44% at 1505329 rides  
+Members rides make up 64.56% at 2742017
+
+
 
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Bicycle%20Type.png)
