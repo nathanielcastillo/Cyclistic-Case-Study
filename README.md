@@ -376,19 +376,18 @@ The Data has been analyzed and visualized in Tableau
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Member%20Percent.png)
 
-Approximately 2/3 of the rides made in 2023 were Member rides
+In 2023 approximately 2/3 of the rides were member rides
 
 * Out of 4247346 rides analyzed  
 * Casual rides make up 35.44% at 1505329 rides    
-* Members rides make up 64.56% at 2742017
+* Members rides make up 64.56% at 2742017 rides
 
 ## Bicycle Type
 
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Bicycle%20Type.png)
 
-Both members and casual riders ride
-
+Both members and casual riders ride classic bikes more than electric. Docked biycles only appeared in casual rides
 
 ## Average Ride Duration
 
