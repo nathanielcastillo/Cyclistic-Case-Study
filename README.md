@@ -377,7 +377,7 @@ ADD COLUMN ride_duration_min INT AS (TIMESTAMPDIFF(MINUTE, started_at, ended_at)
 ;
 ```
 ## Export
-Exporting Table into CSV as 2023_ride_data_export  
+Exporting Table into CSV as 2023_ride_data_export.csv for further analysis in Tableau  
 SELECT INTO OUTFILE is used to acheive best performance    
 Filepath is dependent on where file will be stored    
 
