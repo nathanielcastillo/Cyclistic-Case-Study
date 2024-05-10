@@ -300,6 +300,7 @@ DROP COLUMN end_station_id
 ```
 
 ### Creating Temporary Table with Window function to add row number to duplicates
+Window function and temporary table is used for performance over subqueries 
 Window function will assign row numbers to entries to determine if duplicate entries exist  
 The first ride entry prioritizing member rides will marked with row number 1  
 Any duplicate entry will be marked with a row number > 1  
