@@ -1,4 +1,4 @@
-# Cyclistic-Case-Study
+# Cyclistic-Ride-Data
 
 
 # Introduction
