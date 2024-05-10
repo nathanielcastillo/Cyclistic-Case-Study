@@ -376,9 +376,24 @@ ALTER TABLE 2023_ride_data
 ADD COLUMN ride_duration_min INT AS (TIMESTAMPDIFF(MINUTE, started_at, ended_at))
 ;
 ```
+## Export
+Exporting Table into CSV as 2023_ride_data_export  
+SELECT INTO OUTFILE is used to acheive best performance    
+Filepath is dependent on where file will be stored    
+
+```MySQL
+SELECT 'ride_id', 'rideable_type', 'started_at', 'ended_at', 'start_station_name', 'end_station_name', 'start_lat', 'start_lng', 'end_lat', 'end_lng', 'member_casual', 'ride_route', 'ride_duration_min'
+UNION ALL
+SELECT 'ride_id', 'rideable_type', 'started_at', 'ended_at', 'start_station_name', 'end_station_name', 'start_lat', 'start_lng', 'end_lat', 'end_lng', 'member_casual', 'ride_route', 'ride_duration_min'
+INTO OUTFILE '/Users/MySQL Import_Export/2023_ride_data_export.csv'
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+FROM 2023_ride_data;
+```
 # Analyze & Share
 
-The Data has been analyzed and visualized in Tableau 
+The Data has been analyzed and visualized in Tableau  
+Interactive versions are available at links below
 
 [2023 Cyclistic Ride Data Story 
 ](https://public.tableau.com/views/2023CyclisticRideDataStory/RideDataStory?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
