@@ -2,7 +2,7 @@
 
 ## A Data Analysis Case Study using Excel, SQL and Tableau
 
-The process and code used is documented in this README.md  
+The process and code used is documented within this README.md  
 
 Attached are a .sql file containing the code and a PowerPoint presentation  
 
