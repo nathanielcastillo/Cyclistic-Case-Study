@@ -402,6 +402,7 @@ Interactive versions are available at links below
 [2023 Cyclistic Ride Data Dashboard
 ](https://public.tableau.com/views/2023CyclisticRideDataDashboard/RideDataDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 
+A PowerPoint Presentation is also available in the files 
 
 ## Membership Percentage
 ![
