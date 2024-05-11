@@ -1,7 +1,13 @@
 # Cyclistic-Ride-Data
 
 A data analysis case study using Excel, SQL and Tableau  
-The process and code used is documented below
+The process and code used is documented below  
+
+[2023 Cyclistic Ride Data Story 
+](https://public.tableau.com/views/2023CyclisticRideDataStory/RideDataStory?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+
+[2023 Cyclistic Ride Data Dashboard
+](https://public.tableau.com/views/2023CyclisticRideDataDashboard/RideDataDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 
 # Introduction
 
