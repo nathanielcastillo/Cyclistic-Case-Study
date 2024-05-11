@@ -418,7 +418,7 @@ In 2023 approximately 2/3 of the rides were member rides
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Bicycle%20Type.png)
 
-Both members and casual riders ride classic bikes more than electric. Docked biycles only appeared in casual rides
+Both members and casual riders ride classic bikes more than electric. Docked bicycles only appeared in casual rides
 
 ## Average Ride Duration
 ![
