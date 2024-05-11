@@ -3,7 +3,8 @@
 A data analysis case study using Excel, SQL and Tableau  
 The process and code used is documented in this README.md
 
-A .sql file containing the code and a PowerPoint presentation is attached  
+Attached are a .sql file containing the code and a PowerPoint presentation  
+
 The raw data files used can be downloaded from https://divvy-tripdata.s3.amazonaws.com/index.html as they are too large to be attached  
 
 Links to Tableau visualizations
