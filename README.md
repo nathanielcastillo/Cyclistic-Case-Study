@@ -13,7 +13,7 @@ But first, Cyclistic excutives must approve your recommendations, so they must b
 
 * Analyze how members and casual riders use Cyclistic bikes differently. 
 
-* Provide reccomendations to convert casual riders into annual members based on the findings.
+* Provide recomendations to convert casual riders into annual members based on the findings.
 
 ### Stakeholders
 
