@@ -19,9 +19,9 @@ But first, Cyclistic executives must approve your recommendations, so they must 
 
 * Lily Moreno: Director of marketing 
 
-* Cyclistic Executive Team: Will decide whether to appove the reccomended marketing program
+* Cyclistic Executive Team: Will decide whether to approve the recomended marketing program
 
-* Cyclistc Marketing Analytics Team: Team of data analysts reposonsible for guiding Cyclistic marketing strategy
+* Cyclistic Marketing Analytics Team: Team of data analysts responsible for guiding Cyclistic marketing strategy
 
 # Prepare
 ### Data Source
@@ -64,7 +64,7 @@ Total - 5719877 rows of data
 # Process
 ### Data Cleaning Tools
 
-Data cleaning will be done in MySQL as there are a total of over 5 million rows of data which is too much for Microsoft Excel to process efficiently  
+Data cleaning will be done in MySQL as there are a total of over 5.7 million rows of data which is too much for Microsoft Excel to process efficiently  
 The code used will be documented below  
 
 ### Creating Master Table
@@ -104,7 +104,7 @@ start_lat - Latitude coordinates for where the ride started
 start_lng - Longitude coordinates for where the ride started  
 end_lat - Latitude coordinates for where the ride ended  
 end_lng - Latitude coordinates for where the ride ended  
-member_casual - Type of ride. Member or Casaul  
+member_casual - Type of ride. Member or Casual  
 
 ### Loading data into Master Table
 LOAD DATA INFILE is used to achieve best performance   
@@ -300,7 +300,7 @@ DROP COLUMN end_station_id
 ```
 
 ### Creating Temporary Table with Window function to add row number to duplicates
-Window function and temporary table is used for performance over subqueries 
+Window function and temporary table is used over subqueries to optimize performance
 Window function will assign row numbers to entries to determine if duplicate entries exist  
 The first ride entry prioritizing member rides will marked with row number 1  
 Any duplicate entry will be marked with a row number > 1  
@@ -320,7 +320,7 @@ ORDER BY ride_id
 
 ### "Deleting" duplicates prioritzing member rides
 We are only importing where row num = 1   
-If duplicate entries exists, they are "deleted" by filtering out row numbers != 1 from the previous temporary table  
+If duplicate entries exists, they are "deleted" by filtering out row numbers != 1 using the previous temporary table  
 
 ```MySQL
 TRUNCATE TABLE 2023_ride_data; 
@@ -483,9 +483,9 @@ Both Casuals and member ride peak in the warmer summer months and fall off durin
 | Most popular rides have the same start and end station | Most popular rides have different start and end station |
 
 # Act
-## Reccomendations
+## Recommendations
 
-### Top 3 Reccomendations to convert Casual Riders to Annual Members
+### Top 3 Recommendations to convert Casual Riders to Annual Members
 
 1. During the Summer Months, offer a discount on the annual membership
 Since summer are busiest months, casual riders may opt to purchase an annual membership if they plan on riding a lot during the summer
