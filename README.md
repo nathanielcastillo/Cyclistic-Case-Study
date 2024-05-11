@@ -1,10 +1,12 @@
 # Cyclistic-Ride-Data
 
 A data analysis case study using Excel, SQL and Tableau  
-The process and code used is documented below
+The process and code used is documented in this README.md
 
 A .sql file containing the code and a PowerPoint presentation is attached  
 The raw data files used can be downloaded from https://divvy-tripdata.s3.amazonaws.com/index.html as they are too large to be attached  
+
+Tableau Links
 
 [2023 Cyclistic Ride Data Story 
 ](https://public.tableau.com/views/2023CyclisticRideDataStory/RideDataStory?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
