@@ -34,7 +34,7 @@ But first, Cyclistic executives must approve your recommendations, so they must 
 
 * Lily Moreno: Director of marketing 
 
-* Cyclistic Executive Team: Will decide whether to approve the recomended marketing program
+* Cyclistic Executive Team: Team that will decide whether to approve the recomended marketing program
 
 * Cyclistic Marketing Analytics Team: Team of data analysts responsible for guiding Cyclistic marketing strategy
 
