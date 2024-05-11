@@ -1,6 +1,6 @@
 # Cyclistic-Ride-Data
 
-A data analysis case study using using SQL and Tableau  
+A data analysis case study using using Excel, SQL and Tableau  
 
 # Introduction
 
