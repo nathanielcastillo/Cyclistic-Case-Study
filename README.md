@@ -4,7 +4,7 @@
 
 The process and code used is documented within this README.md  
 
-Attached are a .sql file containing the code and a PowerPoint presentation  
+Attached are a combined CSV file, .sql file containing the code and a PowerPoint presentation  
 
 The raw data files used can be downloaded from https://divvy-tripdata.s3.amazonaws.com/index.html as they are too large to be attached  
 
