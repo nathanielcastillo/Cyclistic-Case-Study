@@ -107,20 +107,6 @@ CREATE TABLE 2023_ride_data
 ```
 ### Column Overview
 
-ride_id - Alphanumerical ID given to the rides  
-rideable_type - What kind of bicycle was used? Classic, electric, docked    
-start_at - Timestamp for when the ride started  
-ended_at - Timestamp for when the ride ended  
-start_station_name - Name of station where ride started  
-start_station_id - Alphanumeric ID given to the stations  
-end_station_name - Name of station where ride ended  
-end_station_id - Alphanumeric ID given to the stations  
-start_lat - Latitude coordinates for where the ride started   
-start_lng - Longitude coordinates for where the ride started  
-end_lat - Latitude coordinates for where the ride ended  
-end_lng - Latitude coordinates for where the ride ended  
-member_casual - Type of ride. Member or Casual  
-
 | Column Name        | Column Description                                       |
 |--------------------|----------------------------------------------------------|
 | ride_id            | Alphanumerical ID given to the rides                     |
