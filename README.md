@@ -27,7 +27,7 @@ Therefore, your team wants to understand how casual riders and annual members us
 From these insights, your team will design a new marketing strategy to convert casual riders into annual members.
 But first, Cyclistic executives must approve your recommendations, so they must be backed up with compelling data insights and professional data visualizations.
 
-# 1. Ask
+# Ask
 ### Main Business Task
 
 * Analyze how members and casual riders use Cyclistic bikes differently. 
@@ -409,18 +409,7 @@ FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 FROM 2023_ride_data;
 ```
-# Analyze & Share
-
-The Data has been analyzed and visualized in Tableau  
-Interactive versions are available at links below
-
-[2023 Cyclistic Ride Data Story 
-](https://public.tableau.com/views/2023CyclisticRideDataStory/RideDataStory?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
-
-[2023 Cyclistic Ride Data Dashboard
-](https://public.tableau.com/views/2023CyclisticRideDataDashboard/RideDataDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
-
-A PowerPoint Presentation is also available in the files 
+# Analyze 
 
 ## Membership Percentage
 ![
@@ -501,6 +490,19 @@ Both Casuals and member ride peak in the warmer summer months and fall off durin
 | Casual                                                 | Member                                                  |
 |--------------------------------------------------------|---------------------------------------------------------|
 | Most popular rides have the same start and end station | Most popular rides have different start and end station |
+
+# Share
+
+The Data has been analyzed and visualized in Tableau  
+Interactive versions are available at links below
+
+[2023 Cyclistic Ride Data Story 
+](https://public.tableau.com/views/2023CyclisticRideDataStory/RideDataStory?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+
+[2023 Cyclistic Ride Data Dashboard
+](https://public.tableau.com/views/2023CyclisticRideDataDashboard/RideDataDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+
+A PowerPoint Presentation is also available in the files 
 
 # Act
 ## Recommendations
