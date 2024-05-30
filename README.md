@@ -7,7 +7,7 @@ using Excel, SQL and Tableau
 
 This Case Study will follow the APPASA format
 
-### [Ask](#ask)  
+### [Ask](#1-ask)  
 ### [Prepare](#prepare)  
 ### [Process](#process)  
 ### [Analyze](#analyze)  
@@ -27,7 +27,7 @@ Therefore, your team wants to understand how casual riders and annual members us
 From these insights, your team will design a new marketing strategy to convert casual riders into annual members.
 But first, Cyclistic executives must approve your recommendations, so they must be backed up with compelling data insights and professional data visualizations.
 
-# Ask
+# 1. Ask
 ### Main Business Task
 
 * Analyze how members and casual riders use Cyclistic bikes differently. 
