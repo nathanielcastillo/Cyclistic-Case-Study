@@ -7,7 +7,7 @@ using Excel, SQL and Tableau
 
 This Case Study will follow the APPASA format
 
-### [1. Ask](#1-ask)  
+### [1. Ask](#ask)  
 ### [2. Prepare](#prepare)  
 ### [3. Process](#process)  
 ### [4. Analyze](#analyze)  
