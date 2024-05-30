@@ -7,12 +7,12 @@ using Excel, SQL and Tableau
 
 This Case Study will follow the APPASA format
 
-### [Ask](#1-ask)  
-### [Prepare](#prepare)  
-### [Process](#process)  
-### [Analyze](#analyze)  
-Share  
-Act 
+### [1. Ask](#1-ask)  
+### [2. Prepare](#prepare)  
+### [3. Process](#process)  
+### [4. Analyze](#analyze)  
+### [5. Share](#share)  
+### [6. Act](#act) 
 
 [Tableau Presentation
 ](https://public.tableau.com/views/2023CyclisticRideDataStory/RideDataStory?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
