@@ -1,22 +1,26 @@
 # Cyclistic-Ride-Data
 
-## A Data Analysis Case Study using Excel, SQL and Tableau
+# Introduction
 
-The process and code used is documented within this README.md  
+Data Analysis case study for the fictional bike share company Cyclistic,
+using Excel, SQL and Tableau
 
-Attached are a .sql file containing the code and a PowerPoint presentation  
+This Case Study will follow the APPASA format
 
-The raw data files used can be downloaded from https://divvy-tripdata.s3.amazonaws.com/index.html as they are too large to be attached  
+### [Ask](#ask)
+Prepare  
+Process  
+Analyze  
+Share  
+Act 
 
-Links to Tableau visualizations
-
-[2023 Cyclistic Ride Data Story 
+[Tableau Presentation
 ](https://public.tableau.com/views/2023CyclisticRideDataStory/RideDataStory?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 
-[2023 Cyclistic Ride Data Dashboard
+[Tableau Dashboard
 ](https://public.tableau.com/views/2023CyclisticRideDataDashboard/RideDataDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 
-# Introduction
+# Scenario
 
 Cyclistic is a bike-share company in Chicago. The director of marketing believes the company’s future success depends on maximizing the number of annual memberships.
 Therefore, your team wants to understand how casual riders and annual members use Cyclistic bikes differently.
