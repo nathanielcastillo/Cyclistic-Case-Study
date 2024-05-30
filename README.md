@@ -107,6 +107,7 @@ CREATE TABLE 2023_ride_data
 ```
 ### Column Overview
 
+
 | Column Name        | Column Description                                       |
 |--------------------|----------------------------------------------------------|
 | ride_id            | Alphanumerical ID given to the rides                     |
