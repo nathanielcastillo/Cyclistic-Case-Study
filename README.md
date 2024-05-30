@@ -10,7 +10,7 @@ This Case Study will follow the APPASA format
 ### [Ask](#ask)  
 ### [Prepare](#prepare)  
 ### [Process](#process)  
-Analyze  
+### [Analyze](#analyze)  
 Share  
 Act 
 
