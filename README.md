@@ -57,29 +57,41 @@ Data deemed as credible and passes ROCCC method
 - [x] Current - Data is from 2023
 - [x] Cited - Motivate International Inc.
 
-Note that data-privacy issues prevent access from rider's personally identifiable information.
-Only individual ride information is collected, information about the riders themselves is not.
-Therefore, unable to determine things like if casual riders live within Cyclistic service areas or if they purchased multiple single passes.
-
-Data needs to be cleaned before further analysis due to data quality issues such as null values.
-
 The 12 CSVs of data will be used
 
-202301-divvy-tripdata.csv - 190301 rows of data  
-202302-divvy-tripdata.csv - 190445 rows of data   
-202303-divvy-tripdata.csv - 258678 rows of data  
-202304-divvy-tripdata.csv - 426590 rows of data  
-202305-divvy-tripdata.csv - 604827 rows of data  
-202306-divvy-tripdata.csv - 719618 rows of data  
-202307-divvy-tripdata.csv - 767650 rows of data  
-202308-divvy-tripdata.csv - 771693 rows of data  
-202309-divvy-tripdata.csv - 666371 rows of data  
-202310-divvy-tripdata.csv - 537113 rows of data  
-202311-divvy-tripdata.csv - 362518 rows of data  
-202312-divvy-tripdata.csv - 224073 rows of data
+| Filename                  | Rows of Data |
+|---------------------------|--------------|
+| 202301-divvy-tripdata.csv | 190301       |
+| 202302-divvy-tripdata.csv | 190445       |
+| 202303-divvy-tripdata.csv | 258678       |
+| 202304-divvy-tripdata.csv | 426590       |
+| 202305-divvy-tripdata.csv | 604827       |
+| 202306-divvy-tripdata.csv | 719618       |
+| 202307-divvy-tripdata.csv | 767650       |
+| 202308-divvy-tripdata.csv | 771693       |
+| 202309-divvy-tripdata.csv | 666371       |
+| 202310-divvy-tripdata.csv | 537113       |
+| 202311-divvy-tripdata.csv | 362518       |
+| 202312-divvy-tripdata.csv | 224073       |
+| Total rows of data        | 5719877      |
 
-Total - 5719877 rows of data
+### Column Overview
 
+| Column Name        | Column Description                                       |
+|--------------------|----------------------------------------------------------|
+| ride_id            | Alphanumerical ID given to the rides                     |
+| rideable_type      | What kind of bicycle was used? Classic, electric, docked |
+| start_at           | Timestamp for when the ride started                      |
+| ended_at           | Timestamp for when the ride ended                        |
+| start_station_name | Name of station where ride started                       |
+| start_station_id   | Alphanumeric ID given to the stations                    |
+| end_station_name   | Name of station where ride ended                         |
+| end_station_id     | Alphanumeric ID given to the stations                    |
+| start_lat          | Latitude coordinates for where the ride started          |
+| start_lng          | Longitude coordinates for where the ride started         |
+| end_lat            | Latitude coordinates for where the ride ended            |
+| end_lng            | Longitude coordinates for where the ride ended           |
+| member_casual      | Type of ride, Member or Casual                           |
 # Process
 
 ### Creating Master Table
@@ -105,24 +117,7 @@ CREATE TABLE 2023_ride_data
 )
 ;
 ```
-### Column Overview
 
-
-| Column Name        | Column Description                                       |
-|--------------------|----------------------------------------------------------|
-| ride_id            | Alphanumerical ID given to the rides                     |
-| rideable_type      | What kind of bicycle was used? Classic, electric, docked |
-| start_at           | Timestamp for when the ride started                      |
-| ended_at           | Timestamp for when the ride ended                        |
-| start_station_name | Name of station where ride started                       |
-| start_station_id   | Alphanumeric ID given to the stations                    |
-| end_station_name   | Name of station where ride ended                         |
-| end_station_id     | Alphanumeric ID given to the stations                    |
-| start_lat          | Latitude coordinates for where the ride started          |
-| start_lng          | Longitude coordinates for where the ride started         |
-| end_lat            | Latitude coordinates for where the ride ended            |
-| end_lng            | Longitude coordinates for where the ride ended           |
-| member_casual      | Type of ride, Member or Casual                           |
 
 ### Loading data into Master Table
 LOAD DATA INFILE is used to achieve best performance   
