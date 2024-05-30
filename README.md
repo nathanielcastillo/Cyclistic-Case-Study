@@ -52,7 +52,7 @@ Trip data is organized into 1 CSV file per month for a total of 12 CSVs for the 
 Data deemed as credible and passes ROCCC method
 
 - [x] Reliable - High Sample Size, over 5 million rows of data    
-- [x] Original - Public Dataset provided by Motivate International Inc. 
+- [x] Original - Public Dataset provided by Motivate International Inc. 2nd Party Data Source
 - [x] Comprehensive - 5 million rows with 13 columns of relevant data
 - [x] Current - Data is from 2023
 - [x] Cited - Motivate International Inc.
