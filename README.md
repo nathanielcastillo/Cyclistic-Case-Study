@@ -464,6 +464,8 @@ Members most likely ride for midweek work commutes and casuals most likely ride 
 
 Both Casuals and member ride peak in the warmer summer months and fall off during the colder winter months
 
+## Start and End Stations
+
 ![
 ](https://github.com/nathanielcastillo/Cyclistic-Case-Study/blob/main/Images/Start%20Station%20Map.png)
 
