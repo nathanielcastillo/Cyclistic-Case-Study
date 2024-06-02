@@ -95,9 +95,11 @@ The 12 CSVs of data will be used
 # Process
 
 ### Creating Master Table
-This will hold all the data from the 12 CSVs as 2023_ride_data
 
 ``` MySQL
+
+-- This will hold all the data from the 12 CSVs as 2023_ride_data
+
 DROP TABLE IF EXISTS 2023_ride_data;
 CREATE TABLE 2023_ride_data
 (
@@ -120,10 +122,12 @@ CREATE TABLE 2023_ride_data
 
 
 ### Loading data into Master Table
-LOAD DATA INFILE is used to achieve best performance   
-File path is dependent on where file is stored
 
 ``` MySQL
+
+-- LOAD DATA INFILE is used to achieve best performance   
+-- File path is dependent on where file is stored
+
 LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202301-divvy-tripdata.csv'
 INTO TABLE 2023_ride_data
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
@@ -200,9 +204,11 @@ IGNORE 1 ROWS; -- Skip the header row if present
 * 2023_ride_data - 5719877 rows imported
 
 ### Deleting rows with NULL or blank values
-Several station names are blank and cannot be identified even when using coordinate information
 
 ``` MySQL
+
+-- Several station names are blank and cannot be identified even when using coordinate information
+
 DELETE 
 FROM 2023_ride_data
 WHERE 
@@ -237,8 +243,11 @@ member_casual = '' OR member_casual IS NULL
 * New 2023_ride_data total - 4331707 rows 
 
 ### Cleaning Station names
-Station Name variations lead to unnecessary station duplicates
+
 ``` MySQL
+
+-- Station Name variations lead to unnecessary station duplicates
+
 UPDATE 2023_ride_data
 SET 
     start_station_name = REPLACE(start_station_name, 'Public Rack - ', ''),
@@ -260,8 +269,11 @@ SET
 * Did not delete rows so table total remains same
 
 ### Deleting rides with "Test" in Station names
-"Test" rides will be deleted   
+
 ``` MySQL
+
+-- "Test" rides will be deleted   
+
 DELETE 
 FROM 2023_ride_data
 WHERE start_station_name LIKE "%Test%" OR end_station_name LIKE "%Test%"
@@ -271,8 +283,11 @@ WHERE start_station_name LIKE "%Test%" OR end_station_name LIKE "%Test%"
 * New 2023_ride_data total - 4331692 rows
 
 ### Setting ride_id column to 16 characters
-Standardizng Ride IDs
+
 ``` MySQL
+
+-- Standardizng Ride IDs
+
 UPDATE 2023_ride_data
 SET ride_id = LEFT(ride_id, 16);
 ```
@@ -303,9 +318,11 @@ member_casual = TRIM(member_casual)
 * Did not delete rows so table total remains same
 
 ### Dropping start_station_id and end_station_id columns
-Station ID columns are not useful or necessary
 
 ``` MySQL
+
+-- Station ID columns are not useful or necessary
+
 ALTER TABLE 2023_ride_data
 DROP COLUMN start_station_id,
 DROP COLUMN end_station_id
@@ -347,8 +364,11 @@ ORDER BY ride_id
 * New 2023_ride_data total - 4331692 (No duplicates)
 
 ### Deleting rides with trip durations over 1 day or negative ride duration  
-Likely technical errors or extreme outliers so they are deleted
+
 ```MySQL
+
+-- Likely technical errors or extreme outliers so they are deleted
+
 DELETE
 FROM 2023_ride_data
 WHERE TIMESTAMPDIFF (YEAR, started_at, ended_at) > 0
@@ -361,8 +381,11 @@ OR TIMESTAMPDIFF (MINUTE, started_at, ended_at) < 0
 * New 2023_ride_data total - 4331525 rows
   
 ### Deleting rides with same start and end station and ride_durations under 1 minute 
-If these conditions are met then it is mostly likely a test or accident so they are deleted
+
 ```MySQL
+
+-- If these conditions are met then it is mostly likely a test or accident so they are deleted
+
 DELETE
 FROM 2023_ride_data
 WHERE start_station_name = end_station_name AND TIMESTAMPDIFF (MINUTE, started_at, ended_at) < 1
@@ -376,15 +399,21 @@ ORDER BY ride_id
 Now that the data have been cleaned, two columns are added for analysis
 
 ### Adding column route
-To analyze popular start station + end station combination
+
 ```MySQL
+
+-- To analyze popular start station + end station combination
+
 ALTER TABLE 2023_ride_data
 ADD COLUMN ride_route VARCHAR(255) AS (CONCAT(start_station_name, ' - ', end_station_name))
 ;
 ```
 ### Adding column trip duration
-To analyze trip duration in minutes
+
 ```MySQL
+
+-- To analyze trip duration in minutes
+
 ALTER TABLE 2023_ride_data
 ADD COLUMN ride_duration_min INT AS (TIMESTAMPDIFF(MINUTE, started_at, ended_at))
 ;
