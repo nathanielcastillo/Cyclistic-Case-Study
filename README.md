@@ -338,14 +338,17 @@ DROP COLUMN end_station_id
 ```
 
 ### Creating Temporary Table with Window function to add row number to duplicates
-Window function and temporary table is used over subqueries to optimize performance
-Window function will assign row numbers to entries to determine if duplicate entries exist  
-The first ride entry prioritizing member rides will marked with row number 1  
-Any duplicate entry will be marked with a row number > 1  
-Result is stored in temporary table for later use  
 
 ```MySQL
+
+-- Window function and temporary table is used over subqueries to optimize performance
+-- Row number function will assign row numbers to entries on all columns except member_casual
+-- The first ride entry prioritizing member rides will marked with row number 1  
+-- Any duplicate entry will be marked with a row number > 1  
+-- Result is stored in temporary table for later use  
+
 DROP TABLE IF EXISTS member_row;
+
 CREATE TEMPORARY TABLE member_row
 SELECT 
             ride_id, rideable_type, started_at, ended_at, start_station_name, end_station_name, start_lat, start_lng, end_lat, end_lng, member_casual,
@@ -358,11 +361,15 @@ ORDER BY ride_id
 ```
 
 ### "Deleting" duplicates prioritzing member rides
-We are only importing where row num = 1   
-If duplicate entries exists, they are "deleted" by filtering out row numbers != 1 using the previous temporary table  
+
 
 ```MySQL
-TRUNCATE TABLE 2023_ride_data; 
+
+-- We are only importing where row num = 1   
+-- If duplicate entries exists, they are "deleted" by filtering out row numbers != 1 using the previous temporary table  
+
+TRUNCATE TABLE 2023_ride_data;
+
 INSERT INTO 2023_ride_data  
 SELECT ride_id, rideable_type, started_at, ended_at, start_station_name, end_station_name, start_lat, start_lng, end_lat, end_lng, member_casual
 FROM member_row
