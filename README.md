@@ -14,11 +14,11 @@ This Case Study will follow the APPASA format
 ### [5. Share](#share)  
 ### [6. Act](#act) 
 
-[Tableau Presentation
-](https://public.tableau.com/views/2023CyclisticRideDataStory/RideDataStory?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+[Tableau Presntation
+](https://public.tableau.com/views/CyclisticinMotionAnalyzingRideDataforMarketingSuccess/CyclisticRideDataPresentation?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 
 [Tableau Dashboard
-](https://public.tableau.com/views/2023CyclisticRideDataDashboard/RideDataDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+](https://public.tableau.com/views/CyclisticRideDataDashboard/RideDataDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 
 # Scenario
 
