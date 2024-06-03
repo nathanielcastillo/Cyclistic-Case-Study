@@ -200,8 +200,9 @@ FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS; -- Skip the header row if present
 ;
-```
-* 2023_ride_data - 5719877 rows imported
+
+-- 5719877 rows imported
+``` 
 
 ### Deleting rows with NULL or blank values
 
@@ -238,9 +239,11 @@ end_lng = '' OR end_lng IS NULL
 OR
 member_casual = '' OR member_casual IS NULL
 ;
+
+-- 1388170 rows deleted   
+-- New 2023_ride_data total - 4331707 rows
 ```
-* 1388170 rows deleted   
-* New 2023_ride_data total - 4331707 rows 
+
 
 ### Cleaning Station names
 
@@ -264,9 +267,10 @@ SET
     end_station_name = REPLACE(end_station_name, 'Buckingham - Fountain', 'Buckingham Fountain'),
     end_station_name = REPLACE(end_station_name, 'Senka "Edward Duke"" Park"', 'Senka "Edward Duke" Park')
 ;
+
+-- 151158 rows affected  
+-- Did not delete rows so table total remains same
 ```
-* 151158 rows affected  
-* Did not delete rows so table total remains same
 
 ### Deleting rides with "Test" in Station names
 
@@ -278,9 +282,11 @@ DELETE
 FROM 2023_ride_data
 WHERE start_station_name LIKE "%Test%" OR end_station_name LIKE "%Test%"
 ;
+
+-- 15 rows deleted  
+-- New 2023_ride_data total - 4331692 rows
+
 ```
-* 15 rows deleted  
-* New 2023_ride_data total - 4331692 rows
 
 ### Setting ride_id column to 16 characters
 
@@ -290,10 +296,11 @@ WHERE start_station_name LIKE "%Test%" OR end_station_name LIKE "%Test%"
 
 UPDATE 2023_ride_data
 SET ride_id = LEFT(ride_id, 16);
+
+-- 484 rows affected
+-- Did not delete rows so table total remains same
 ```
-* 484 rows affected
-* Did not delete rows so table total remains same
- 
+
 ### Trimming all columns
 
 ``` MySQL
@@ -313,9 +320,10 @@ end_lat = TRIM(end_lat),
 end_lng = TRIM(end_lng),
 member_casual = TRIM(member_casual)
 ;
+
+-- 257 rows affected
+-- Did not delete rows so table total remains same
 ```
-* 257 rows affected
-* Did not delete rows so table total remains same
 
 ### Dropping start_station_id and end_station_id columns
 
@@ -345,8 +353,9 @@ SELECT
 FROM 2023_ride_data
 ORDER BY ride_id
 ;
+
+-- member_row - temporary table created with 4331692 rows
 ```
-* member_row - temporary table created with 4331692 rows
 
 ### "Deleting" duplicates prioritzing member rides
 We are only importing where row num = 1   
@@ -360,8 +369,9 @@ FROM member_row
 WHERE row_num = 1
 ORDER BY ride_id
 ;
+
+-- New 2023_ride_data total - 4331692 (No duplicates)
 ```
-* New 2023_ride_data total - 4331692 (No duplicates)
 
 ### Deleting rides with trip durations over 1 day or negative ride duration  
 
@@ -376,10 +386,12 @@ OR TIMESTAMPDIFF (MONTH, started_at, ended_at) > 0
 OR TIMESTAMPDIFF (DAY, started_at, ended_at) > 0
 OR TIMESTAMPDIFF (MINUTE, started_at, ended_at) < 0
 ;
+
+-- 167 rows deleted
+-- New 2023_ride_data total - 4331525 rows
+
 ```
-* 167 rows deleted
-* New 2023_ride_data total - 4331525 rows
-  
+
 ### Deleting rides with same start and end station and ride_durations under 1 minute 
 
 ```MySQL
@@ -391,9 +403,10 @@ FROM 2023_ride_data
 WHERE start_station_name = end_station_name AND TIMESTAMPDIFF (MINUTE, started_at, ended_at) < 1
 ORDER BY ride_id
 ;
+
+-- 84179 rows deleted
+-- New 2023_ride_data total - 4247346 rows
 ```
-* 84179 rows deleted
-* New 2023_ride_data total - 4247346 rows
 
 ## Additions 
 Now that the data have been cleaned, two columns are added for analysis
@@ -419,11 +432,13 @@ ADD COLUMN ride_duration_min INT AS (TIMESTAMPDIFF(MINUTE, started_at, ended_at)
 ;
 ```
 ## Export
-Exporting Table into CSV as 2023_ride_data_export.csv for further analysis in Tableau  
-SELECT INTO OUTFILE is used to acheive best performance    
-Filepath is dependent on where file will be stored    
-
+ 
 ```MySQL
+
+-- Exporting Table into CSV as 2023_ride_data_export.csv for further analysis in Tableau  
+-- SELECT INTO OUTFILE is used to acheive best performance    
+-- Filepath is dependent on where file will be stored   
+
 SELECT 'ride_id', 'rideable_type', 'started_at', 'ended_at', 'start_station_name', 'end_station_name', 'start_lat', 'start_lng', 'end_lat', 'end_lng', 'member_casual', 'ride_route', 'ride_duration_min'
 UNION ALL
 SELECT 'ride_id', 'rideable_type', 'started_at', 'ended_at', 'start_station_name', 'end_station_name', 'start_lat', 'start_lng', 'end_lat', 'end_lng', 'member_casual', 'ride_route', 'ride_duration_min'
