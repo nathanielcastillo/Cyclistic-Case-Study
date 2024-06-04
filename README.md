@@ -543,7 +543,7 @@ Both Casuals and member ride peak in the warmer summer months and fall off durin
 The Data has been analyzed and visualized in Tableau  
 Interactive versions are available at links below
 
-[Tableau Presntation
+[Tableau Presentation
 ](https://public.tableau.com/views/CyclisticinMotionAnalyzingRideDataforMarketingSuccess/CyclisticRideDataPresentation?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 
 [Tableau Dashboard
